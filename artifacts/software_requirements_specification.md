@@ -10,37 +10,41 @@ A functional requirement defines a specific behavior or action that a system, so
 -	The system shall have a user-friendly form to enter necessary information during the registration process. 
 -	The required pieces of information to register a new user shall be username, email address, TSA ID, password, reporting manager, and user role. 
 -	System shall enforce password complexity rules including minimum length, use of uppercase, lowercase, numbers, and special characters to maintain system security. 
--	The system shall require a password reset every 6 months.
--	System shall require an admin to approve the new user before it can be created.
+-   Users shall be required to confirm their password
+-	System shall display a message to let the user know when they have sucessfully registered
+-   System shall display all new users in the Users table
 -	The system shall enforce unique account constraints on all accounts created.
-2.	Customer Profile Manager
--	System shall have the ability to add new customers to the system database.
--	System shall have the ability to deactivate customers from the system database. 
--	Admin users shall have the ability to update customer information. 
+
+2.	Customer Profile and Dashboard
+-	System shall display key metrics for customers including open deduction balance and number of open deductions
+-	System shall have the ability to update all customer information except the customer number
+-	Only admin users shall have the ability to update customer information. 
 -	All users shall have the ability to create an out-going email to the customer support team from the customer’s profile. 
 -	All customer profiles shall have the option to include a profile picture for the customer. 
--	All customer profiles shall have an area for customer-specific documentation and notes. 
+
+
 3.	User Profile Manager 
 -	Users shall have the ability to make changes to their public profile. 
 -	All users shall have the option to upload a picture to their profile. 
 -	User information shall be available to all users. 
--	User specific stats will only be available to admin users. 
 -	Admin users shall have the ability to deactivate former employees. 
 -	Admin users shall have the ability to edit user data. 
+
 4.	Data Entry Operations
 -	System shall enforce all data constraints for user entered data. 
 -	System shall generate error messages for any violations or data constraints. 
 -	Users shall be able to export data to CSV. 
 -	The system shall record any changes made to the data by recording the time at which the change was made.
 -	The system shall record any changes made to the data by recording the user who made the change. 
--	Only admin users shall have permission to edit data. 
+
 5.	User Authentication 
 -	Login/Welcome splash screen show be user-friendly with fields to enter a password/username. 
+- When users are logged in the login and registration buttons shall not be visable
+- When no user is logged in the login and registration buttons shall be visable
 -	Users shall have the option to reset their password. 
 -	System shall tie out after 30 active minutes and require users to re-enter their password to continue working. 
 -	System shall lock out any users who have failed to enter their password correctly three times. 
 -	Admin users shall have the ability to unlock accounts. 
--	Accounts shall unlock after 30 minutes. 
 
 
 # Non-Functional Requirements
@@ -53,12 +57,14 @@ Based Platform
 -	System shall accommodate multiple devices including tablet, mobile phone, and desktop computer. 
 -	System shall maintain a consistent UI design across all pages and components. 
 -	System shall present user-friendly error messages with clear instructions for resolving issues. 
+
 2.	Security 
 -	The system shall only display data associated with W.K. Kellogg Co. 
 -	Any users with backend access to data shall be required to sign NDA. 
--	Access to change any data shall be restricted to admin users only. 
+-   The system shall store all passwords in hash form to protect security
 -	Access to set strategy of the program shall be limited to director users only. 
--	System shall make use of protected data and get()/set() functions to make changes. 
+-   Only users or users with role of admin can update a user profile
+
 3.	Data Integrity
 -	System shall be connected to an SQL Server managed via SSMS. 
 -	Data in the system shall be accurate and tie out with the master data source (SAP)
