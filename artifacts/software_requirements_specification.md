@@ -75,7 +75,6 @@ A non-functional requirement outlines the quality attributes, performance charac
    - System UI shall respond to user inputs quickly and appropriately.
    - The system shall load the main dashboard within 3 seconds of a user's request.
    - All database queries shall return results within a maximum of 2 seconds.
-   - System messages shall be easily identified.
    - Users shall be able to easily navigate the site and use features.
    - Code shall be fully documented so developers and sustainment teams can easily understand and work with existing code.
    - The system shall be optimized to handle a concurrent user load of 100 users without a degradation in performance.
