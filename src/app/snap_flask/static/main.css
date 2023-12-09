@@ -1,0 +1,10 @@
+/* Style for invalid form controls */
+.is-invalid {
+    border: 1px solid #dc3545; /* Red border */
+    color: #dc3545; /* Red text color */
+  }
+  
+  /* Optional: Style for invalid feedback messages */
+  .invalid-feedback {
+    color: #dc3545; /* Red text color */
+  }

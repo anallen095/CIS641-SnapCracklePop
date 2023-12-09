@@ -1,0 +1,34 @@
+{%extends 'layouts.html'%}
+
+{%block content%}
+<div class="container w-50">
+    <form method="POST" action="">
+        {{form.hidden_tag()}}
+
+        <fieldset>
+            <legend class="border-bottom mb-4">Customer Search</legend>
+            <div class="form-group">
+                {{form.customerNbr.label(class="form-control-label")}}
+                {%if form.customerNbr.error%}
+                    {{form.customerNbr(class="form-control form-control-lg is-invalid")}}
+                    {%for error in form.customerNbr.errors%}
+                        <span>{{error}}</span>
+                    {%endfor%}
+                {%else%}
+                    {{form.customerNbr(class="form-control form-control-lg")}}
+                {%endif%}
+
+            </div>
+
+        </fieldset>
+
+        <div class="field-group">
+            {{form.submit(class='btn btn-online-info')}}
+            
+        </div>
+
+    </form>
+
+</div>
+{%endblock content%}
+

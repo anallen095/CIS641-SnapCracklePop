@@ -1,0 +1,99 @@
+{%extends 'layouts.html'%}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+	
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+	  {{ message }}
+	  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+
+	
+{% endfor %}
+
+{% if current_user.role == 2 %}
+
+	<h1>Update Customer...</h1>
+	<br/>
+<div class="shadow p-3 mb-5 bg-body rounded">
+    <form method="POST" action="">
+
+		{{ form.hidden_tag() }}
+
+		{{ form.name.label(class="form-label") }}
+
+		{{ form.name(class="form-control", value=cust.name) }}
+		<br/>
+
+		{{ form.channel.label(class="form-label") }}
+
+		{{ form.channel(class="form-control", value=cust.channel) }}
+		<br/>
+
+		{{ form.soldTo.label(class="form-label") }}
+
+		{{ form.soldTo(class="form-control", value=cust.soldTo) }}
+		
+        <br/>
+
+		{{ form.payer.label(class="form-label") }}
+		{{ form.payer(class="form-control", value=cust.payer) }}<br/>
+
+		{{ form.altPayer.label(class="form-label") }}
+		{{ form.altPayer(class="form-control", value=cust.altPayer) }}
+		<br/>
+
+
+		{{ form.altPayer2.label(class="form-label") }}
+		{{ form.altPayer2(class="form-control", value=cust.altPayer2) }}<br/>
+        
+        {{ form.SaleA.label(class="form-label") }}
+		{{ form.SaleA(class="form-control", value=cust.SaleA) }}<br/>
+
+        {{ form.SaleB.label(class="form-label") }}
+		{{ form.SaleB(class="form-control", value=cust.SaleB) }}<br/>
+
+        {{ form.SaleC.label(class="form-label") }}
+		{{ form.SaleC(class="form-control", value=cust.SaleC) }}<br/>
+
+        {{ form.SalesD.label(class="form-label") }}
+		{{ form.SalesD(class="form-control", value=cust.SalesD) }}<br/>
+
+        {{ form.SalesE.label(class="form-label") }}
+		{{ form.SalesE(class="form-control", value=cust.SalesE) }}<br/>
+
+        {{ form.planTo.label(class="form-label") }}
+		{{ form.planTo(class="form-control", value=cust.planTo) }}<br/>
+
+        {{ form.planToName.label(class="form-label") }}
+		{{ form.planToName(class="form-control", value=cust.planToName) }}<br/>
+		
+
+        <div class="field-group">
+			{{ form.submit(class="btn btn-secondary") }}
+            
+        </div>
+
+
+
+
+	</form>
+</div>
+<br/><br/><br/> 
+
+{% else %}
+ <div class="alert alert-warning alert-dismissible fade show" role="alert">
+	  Sorry! You Can't Edit This Customer...
+	  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+
+	<h2>Access Denied!</h2>
+	<p>Sorry, you cannot access this customer profile...</p>
+
+{% endif %}
+
+
+
+
+{% endblock %}

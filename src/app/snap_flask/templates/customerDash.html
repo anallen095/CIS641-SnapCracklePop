@@ -1,0 +1,123 @@
+{% extends 'layouts.html' %}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+	
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+	  {{ message }}
+	  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+
+	
+{% endfor %}
+
+<div class="container w-50">   
+
+
+	<fieldset>
+		<br><h2>{{ cust.name }} Dashboard</h2><br>
+
+		<div class="card">
+  			<div class="card-body">
+   				<p class="card-text">
+					<div class="container">
+						<div class="row">
+							<div class="col-8">
+								<strong>Customer Number:</strong>
+								{{ cust.id }}<br/>
+
+								<strong>Customer Name:</strong>
+								{{ cust.name }}<br/>
+
+								<strong>Channel:</strong>
+								{{ cust.channel }}<br/>
+
+								<strong>Plan To Number:</strong>
+								{{ cust.planTo }}<br/>
+
+								<strong>Plan To Description:</strong>
+								{{ cust.planToName }}<br/>
+
+								<strong>Sales A:</strong>
+								{{ cust.salesA }}<br/>
+
+								<strong>Sales B:</strong>
+								{{ cust.salesB }}<br/>
+
+								<strong>Sales B:</strong>
+								{{ cust.salesC }}<br/>
+
+								<strong>Sales B:</strong>
+								{{ cust.salesD }}<br/>
+
+								<strong>Sales B:</strong>
+								{{ cust.salesE }}<br/><br/><br/>
+
+								<strong>Open Balance:</strong>
+								{{ cust.openBal }}<br/>
+
+								<strong>Open Item Count:</strong>
+								{{ cust.openCount }}<br/><br/><br/>
+
+							</div>
+
+							<div class="col-4">
+								<img src="static/images/default_profile.png" width="200" align="right">
+							
+							</div>
+
+						</div>
+					</div>
+
+					<br>
+					<h3>Support Team</h3><br>
+				
+					<table class="table table-striped">
+						<thead>
+							<tr>
+							  <th scope="col">Name</th>
+							  <th scope="col">Support Function</th>
+							  <th scope="col">Email Address</th>
+							  <th scope="col">Email User</th>
+							</tr>
+						  </thead>
+						  <tbody>
+							{% for row in cust.support %}
+							<tr> 
+								{% for cell in row %}
+								<td>{{ cell}}</td>
+								{% endfor %}
+								<td>
+									<a href="mailto:" {{ cust.support[2]}}>
+										<button type="button" class="btn btn-secondary btn-sm" id="btnOutlook">Email</button>
+									</a>
+								</td>
+
+							</tr>
+							{% endfor %}
+						  </tbody>
+						</table>						
+					</table>
+				</p>
+			</div>
+			
+		</div>
+	</fieldset>
+	<!-- <div class="container w-50"> -->
+
+
+	
+	<!-- </div> -->
+	
+
+
+	
+
+    	
+	
+
+
+
+
+{% endblock %}

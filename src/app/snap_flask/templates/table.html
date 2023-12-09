@@ -1,0 +1,43 @@
+{%extends 'layouts.html'%}
+
+{%block content%}
+
+<div class="container w-80">
+
+    <div class="card">
+        <div class="card-body">
+             <p class="card-text">
+                <legend class="border-bottom mb-4">{{ lg }}</legend>
+                
+                <a href="{{ url_for('download_data', data=data) }}" class="btn btn-danger btn-sm">Download Data</a>
+
+                <table class="table table-striped">
+                    <tr>
+                        {% for header in headings %}
+                        <th>{{ header }}</th>
+                        {% endfor %}
+                    </tr>
+                   
+                        {% for row in data %}
+                        <tr> 
+                            {% for cell in row %}
+                            <td>{{ cell}}</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                </table>
+            
+            
+              <div class="container">
+                  <div class="row">
+                      <div class="col-8">
+
+
+            </p>
+        </div>
+                    
+        </div>
+    </div>
+
+
+{%endblock content%}

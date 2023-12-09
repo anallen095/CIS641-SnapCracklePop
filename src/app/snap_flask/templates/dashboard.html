@@ -1,0 +1,109 @@
+{% extends 'layouts.html' %}
+
+{%block content%}
+
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div> 
+    {% endfor %}
+
+    <div class="container w-50">   
+
+        <fieldset>
+            <br><h2>Employee Dashboard</h2><br>
+
+            <div class="card">
+                <div class="card-body">
+                    Welcome 
+                    {{ current_user.firstName }}
+                     <p class="card-text">
+                      <div class="container">
+                          <div class="row">
+                              <div class="col-8">
+                                <strong>Username:</strong>
+                                {{ current_user.username }}<br/>
+                                <strong>Name:</strong>
+                                {{ current_user.name }}<br/>
+                                <strong>Manager:</strong>
+                                {{ current_user.manager }}<br/>
+                                <strong>Role:</strong>
+                                {{ current_user.role }}<br/>
+
+                                <strong>Open Balance:</strong>
+								{{ current_user.openBal }}<br/>
+  
+                                <strong>Open Item Count:</strong>
+                                {{ current_user.openCount }}<br/><br/><br/>
+  
+                                <a href="{{ url_for('logout')}}" class="btn btn-secondary btn-sm">Logout</a>
+        
+                                <a href="{{ url_for('updateu', id=current_user.username)}}" class="btn btn-secondary btn-sm">Update Profile</a>
+                            
+                                <a href="{{ url_for('deactivate', id=current_user.username)}}" class="btn btn-danger btn-sm">Deactivate</a>
+                                <br/><br/>
+  
+  
+  
+                              </div>
+
+  
+                              <div class="col-4">
+
+                          
+                                  <img src="static/images/default_profile.png" width="200" align="right">
+                          
+
+                              
+                              </div>
+  
+                          </div>
+                      </div>
+  
+                      <br>
+                      <h3>Supported Customers</h3><br>
+                  
+                      <table class="table table-striped">
+                          <thead>
+                              <tr>
+                                <th scope="col">Customer Name</th>
+                                <th scope="col">Customer Number</th>
+                                <th scope="col">Customer Channel</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {% for row in current_user.support %}
+                              <tr> 
+                                  {% for cell in row %}
+                                  <td>{{ cell}}</td>
+                                  {% endfor %}
+                              </tr>
+                              {% endfor %}
+                            </tbody>
+                          </table>
+                             
+                  
+                      </table>
+                  </p>
+
+              </div>
+              
+          </div>
+      </fieldset>
+
+
+
+
+
+
+
+
+
+{%endblock content%}
+
+	
+	
+
+
+
