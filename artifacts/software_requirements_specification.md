@@ -50,7 +50,7 @@ A functional requirement defines a specific behavior or action that a system, so
 
 A non-functional requirement outlines the quality attributes, performance characteristics, and constraints that a system, software, or product must adhere to, such as reliability, scalability, or security, without specifying specific functionalities.
 
-1. **Based Platform**
+1. **Platform**
    - The system shall be accessible across multiple web browsers (e.g., Chrome, Firefox, Edge) to accommodate user preference.
    - The system shall have a responsive design and adjust to different screen sizes.
    - The system shall accommodate multiple devices, including tablet, mobile phones, and desktop computers.
@@ -82,9 +82,6 @@ A non-functional requirement outlines the quality attributes, performance charac
    - The system shall provide clear and concise error messages to users, guiding them on how to resolve issues.
    - Regular system backups shall be automated and performed during non-peak hours to minimize disruption to users.
    - The application shall include version control to track changes in the codebase and allow for easy rollback in case of issues.
-
-
-
 
 6. **Technical Documentation**
    - The documentation shall clearly define the target audience, specifying whether it is intended for developers, administrators, or other stakeholders.
