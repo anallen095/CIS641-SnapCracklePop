@@ -4,8 +4,14 @@ This project will focus on staffing and resource management for the ITC Deductio
 
 ## Team Members and Roles
 
-* Ashley Allen
+* Ashley Allen <br><br>
 
 ## Prerequisites
 
+This system was designed for WK Kellogg Co. Use is restricted to employees of this company. <br>
+Users with access to backend data must submit an NDA for database access. 
+
 ## Run Instructions
+
+From the souroce code, run the file run.py<br>
+Once you run this file the web application will begin running on your local host machine. 
